@@ -1,0 +1,148 @@
+:root {
+  --verde-claro: #d4f7dc;
+  --verde-principal: #4CAF50;
+  --verde-escuro: #2e7d32;
+  --cinza-fundo: #f4f4f4;
+  --texto-primario: #333;
+  --branco: #ffffff;
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--cinza-fundo);
+  color: var(--texto-primario);
+  font-size: 1rem;
+
+}
+
+header {
+  background-color: var(--verde-principal);
+  color: var(--branco);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#content {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: var(--branco);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+a {
+  color: var(--verde-escuro);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--verde-principal);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1px;
+  display: block;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--verde-principal);
+  color: var(--branco);
+  font-size: 0.9rem;
+  margin-top: 130px;
+}
+
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  #content {
+    padding: 1rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  a {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  p, li, a {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  nav a {
+    display: block;
+    padding: 0.7rem 0;
+    font-size: 20px;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+  
+}
