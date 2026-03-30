@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Troppo Restaurante</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scr/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Troppo</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cardapio">Cardápio</a></li>
+    <li><a href="#instagram">Instagram</a></li>
+  </ul>
+  <a href="https://instagram.com/restaurantetroppo" target="_blank" class="nav-insta">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    @restaurantetroppo
+  </a>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#sobre" onclick="closeMobileMenu()">Sobre</a>
+  <a href="#cardapio" onclick="closeMobileMenu()">Cardápio</a>
+  <a href="#instagram" onclick="closeMobileMenu()">Instagram</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-content">
+    <p class="hero-label">Restaurante & Pizzaria</p>
+    <h1 class="hero-title">
+      Troppo
+      <em>Restaurante</em>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Seja bem vindo</p>
+    <a href="#cardapio" class="hero-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      Ver Cardápio
+    </a>
+  </div>
+</section>
+
+
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <div class="section-header" style="text-align:left; margin-bottom:2rem;">
+          <p class="section-label">Quem somos</p>
+          <h2 class="section-title">Uma experiência <em>à parte</em></h2>
+          <div class="section-rule" style="margin-left:0;"></div>
+        </div>
+        <p>O Troppo é um restaurante que une tradição e criatividade em cada prato. Aqui, ingredientes frescos e receitas artesanais se encontram para criar momentos inesquecíveis à mesa.</p>
+        <div class="sobre-highlight">
+          <p>"Do executivo do dia à pizza especial da casa, cada detalhe é pensado com carinho para você."</p>
+        </div>
+        <p>Com um cardápio amplo que vai de filés e frango na chapa a massas, pizzas e petiscos, o Troppo tem algo especial para cada ocasião e paladar.</p>
+      </div>
+      <div class="sobre-stats">
+        <div class="stat-box">
+          <span class="stat-num">+50</span>
+          <span class="stat-label">Pratos</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">+30</span>
+          <span class="stat-label">Pizzas</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">+20</span>
+          <span class="stat-label">Bebidas</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Artesanal</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">2</span>
+          <span class="stat-label">Pessoas</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Sabor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="cardapio">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Março 2026</p>
+      <h2 class="section-title">Nosso <em>Cardápio</em></h2>
+      <div class="section-rule"></div>
+    </div>
+
+    
+    <div class="menu-tabs">
+      <button class="tab-btn active" data-tab="executivos">Executivos</button>
+      <button class="tab-btn" data-tab="forno">Forno</button>
+      <button class="tab-btn" data-tab="chapa">Chapa</button>
+      <button class="tab-btn" data-tab="massas">Massas</button>
+      <button class="tab-btn" data-tab="pizzas">Pizzas</button>
+      <button class="tab-btn" data-tab="petiscos">Petiscos</button>
+      <button class="tab-btn" data-tab="outros">Saladas & Mais</button>
+      <button class="tab-btn" data-tab="bebidas">Bebidas</button>
+    </div>
+
+    
+    <div class="menu-panel active" id="tab-executivos">
+      <p class="menu-category-title">Executivos do Dia</p>
+      <p class="menu-category-sub">Pratos individuais</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Carne do Sol</span>
+            <span class="menu-item-price">R$65</span>
+          </div>
+          <p class="menu-item-desc">Com pirão de leite, arroz branco, feijão tropeiro e tomates com manjericão.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Filé à Parmegiana</span>
+            <span class="menu-item-price">R$65</span>
+          </div>
+          <p class="menu-item-desc">Filé mignon ou filé de frango com arroz branco, purê, batata frita e tomates com manjericão.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Filé de Frango a Moda do Chef</span>
+            <span class="menu-item-price">R$65</span>
+          </div>
+          <p class="menu-item-desc">À milanesa com molho branco, bacon, arroz, batata soutê e tomates com manjericão.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Filé de Frango Grelhado</span>
+            <span class="menu-item-price">R$60</span>
+          </div>
+          <p class="menu-item-desc">Com arroz branco, salada nona e batata soutê.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Salmão Grelhado</span>
+            <span class="menu-item-price">R$75</span>
+          </div>
+          <p class="menu-item-desc">Com arroz branco, salada nona e batata soutê.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Salmão Troppo</span>
+            <span class="menu-item-price">R$75</span>
+          </div>
+          <p class="menu-item-desc">Com talharim ao molho branco, bacon, manjericão e tomate cereja salteado na manteiga de ervas.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Strogonoff de Frango</span>
+            <span class="menu-item-price">R$65</span>
+          </div>
+          <p class="menu-item-desc">Com arroz branco, purê de batata, batata frita e tomates com manjericão.</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="menu-panel" id="tab-forno">
+      <p class="menu-category-title">Filé Mignon ao Forno</p>
+      <p class="menu-category-sub">Para 2 pessoas • acompanha arroz e purê de batatas</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">À Parmegiana</span><span class="menu-item-price">R$135</span></div>
+          <p class="menu-item-desc">À milanesa com mussarela, presunto, molho de tomates, parmesão, arroz e purê de batatas.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">A Moda do Cheff</span><span class="menu-item-price">R$135</span></div>
+          <p class="menu-item-desc">À milanesa com molho branco, bacon, manjericão, arroz e purê de batatas.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Apimentado</span><span class="menu-item-price">R$135</span></div>
+          <p class="menu-item-desc">Molho aurora apimentado, champignon, bacon, arroz e purê de batatas.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Madeira</span><span class="menu-item-price">R$135</span></div>
+          <p class="menu-item-desc">Molho madeira, champignon, arroz e purê de batatas.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Quatro Queijos</span><span class="menu-item-price">R$135</span></div>
+          <p class="menu-item-desc">Com mussarela, gorgonzola, provolone, parmesão, molho branco, arroz e purê de batatas.</p>
+        </div>
+      </div>
+
+      <p class="menu-category-title">Filé de Frango ao Forno</p>
+      <p class="menu-category-sub">Para 2 pessoas • acompanha arroz e purê de batatas</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">À Parmegiana</span><span class="menu-item-price">R$115</span></div>
+          <p class="menu-item-desc">À milanesa com mussarela, presunto, molho de tomates, parmesão, arroz e purê de batatas.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">A Moda do Cheff</span><span class="menu-item-price">R$115</span></div>
+          <p class="menu-item-desc">À milanesa com molho branco, bacon, manjericão, arroz e purê de batatas.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Quatro Queijos</span><span class="menu-item-price">R$115</span></div>
+          <p class="menu-item-desc">Com mussarela, gorgonzola, provolone, parmesão, molho branco, arroz e purê de batatas.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Strogonoff</span><span class="menu-item-price">R$135</span></div>
+          <p class="menu-item-desc">Em cubos, com palmito, champignon, molho de creme de leite, arroz e purê de batatas.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Troppo</span><span class="menu-item-price">R$145</span></div>
+          <p class="menu-item-desc">À milanesa, marinado com cerveja e orégano, molho branco, mussarela, presunto, champignon, azeitona, arroz e purê de batatas.</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="menu-panel" id="tab-chapa">
+      <p class="menu-category-title">Na Chapa</p>
+      <p class="menu-category-sub">Para 2 pessoas • acompanha feijão tropeiro, arroz, vinagrete e farofa</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Picanha Maturatta</span><span class="menu-item-price">R$155</span></div>
+          <p class="menu-item-desc">Com queijo coalho, feijão tropeiro, arroz, vinagrete e farofa.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Carne do Sol</span><span class="menu-item-price">R$135</span></div>
+          <p class="menu-item-desc">Com feijão tropeiro, arroz, vinagrete e farofa.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Filé Mignon</span><span class="menu-item-price">R$135</span></div>
+          <p class="menu-item-desc">Com feijão tropeiro, arroz, vinagrete e farofa.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Filé de Frango</span><span class="menu-item-price">R$115</span></div>
+          <p class="menu-item-desc">Com feijão tropeiro, arroz, vinagrete e farofa.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Bode</span><span class="menu-item-price">R$135</span></div>
+          <p class="menu-item-desc">Com feijão tropeiro, arroz, vinagrete e farofa.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Cordeiro</span><span class="menu-item-price">R$135</span></div>
+          <p class="menu-item-desc">Com feijão tropeiro, arroz, vinagrete e farofa.</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="menu-panel" id="tab-massas">
+      <p class="menu-category-title">Spaghetti & Talharim</p>
+      <p class="menu-category-sub">Para 2 pessoas</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Al Sugo</span><span class="menu-item-price">R$52</span></div>
+          <p class="menu-item-desc">Molho de tomates.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Alho e Oléo</span><span class="menu-item-price">R$52</span></div>
+          <p class="menu-item-desc">Alho dourado no azeite de oliva.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Bolonhesa</span><span class="menu-item-price">R$70</span></div>
+          <p class="menu-item-desc">Molho de tomates e carne bovina moída.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Camarão</span><span class="menu-item-price">R$140</span></div>
+          <p class="menu-item-desc">Camarões fundidos no molho branco.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Frango</span><span class="menu-item-price">R$70</span></div>
+          <p class="menu-item-desc">Molho de tomates, bacon e frango desfiado.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Quatro Queijos</span><span class="menu-item-price">R$90</span></div>
+          <p class="menu-item-desc">Mussarela, gorgonzola, provolone e parmesão fundidos no molho branco.</p>
+        </div>
+      </div>
+
+      <p class="menu-category-title">Lasanhas</p>
+      <p class="menu-category-sub">Média | Grande</p>
+      <table class="menu-table">
+        <thead><tr><th>Sabor</th><th>Média</th><th>Grande</th></tr></thead>
+        <tbody>
+          <tr><td><span class="item-title">Bolonhesa</span>Mussarela, carne bovina e molho de tomates polvilhado com parmesão ralado.</td><td>R$77</td><td>R$90</td></tr>
+          <tr><td><span class="item-title">Frango</span>Mussarela, frango desfiado e molho de tomate polvilhado com parmesão ralado.</td><td>R$77</td><td>R$90</td></tr>
+          <tr><td><span class="item-title">Troppo</span>Mussarela, presunto, frango desfiado, molho branco e molho de tomate polvilhado com parmesão.</td><td>R$84</td><td>R$98</td></tr>
+        </tbody>
+      </table>
+
+      <p class="menu-category-title">Calzones</p>
+      <p class="menu-category-sub">Pequeno | Médio | Grande</p>
+      <table class="menu-table">
+        <thead><tr><th>Tipo</th><th>P</th><th>M</th><th>G</th></tr></thead>
+        <tbody>
+          <tr><td><span class="item-title">Tradicionais</span>Todos os sabores das Pizzas Tradicionais.</td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+          <tr><td><span class="item-title">Especiais</span>Todos os sabores das Pizzas Especiais.</td><td>R$70</td><td>R$82</td><td>R$95</td></tr>
+        </tbody>
+      </table>
+
+      <p class="menu-category-title">Pastel & Pastelzinho</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Queijo | Presunto | Frango | Carne</span><span class="menu-item-price">R$22 <span class="price-small">/ c/ catupiry R$27</span></span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Camarão | Bacalhau</span><span class="menu-item-price">R$32 <span class="price-small">/ c/ catupiry R$38</span></span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Pastelzinho Frango | Presunto (6un)</span><span class="menu-item-price">R$35 <span class="price-small">/ c/ catupiry R$40</span></span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Pastelzinho Camarão | Bacalhau (6un)</span><span class="menu-item-price">R$46 <span class="price-small">/ c/ catupiry R$52</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="menu-panel" id="tab-pizzas">
+      <p class="menu-category-title" style="color:var(--terracota);">Pizzas Tradicionais</p>
+      <p class="menu-category-sub">Pequena | Média | Grande</p>
+      <table class="menu-table">
+        <thead><tr><th>Sabor</th><th>P</th><th>M</th><th>G</th></tr></thead>
+        <tbody>
+          <tr><td><span class="item-title">Mussarela</span>Mussarela</td><td>R$43</td><td>R$50</td><td>R$60</td></tr>
+          <tr><td><span class="item-title">Milho</span>Mussarela e milho</td><td>R$43</td><td>R$50</td><td>R$67</td></tr>
+          <tr><td><span class="item-title">Margherita</span>Mussarela, tomate e manjericão</td><td>R$48</td><td>R$54</td><td>R$67</td></tr>
+          <tr><td><span class="item-title">Gratinada</span>Mussarela, catupiry, parmesão e azeitona</td><td>R$53</td><td>R$60</td><td>R$75</td></tr>
+          <tr><td><span class="item-title">Quatro Queijos</span>Mussarela, provolone, gorgonzola e catupiry</td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+          <tr><td><span class="item-title">Bauru</span>Presunto, mussarela, tomate e azeitona</td><td>R$53</td><td>R$60</td><td>R$75</td></tr>
+          <tr><td><span class="item-title">Portuguesa</span>Presunto, mussarela, ervilha, ovos, cebola e azeitona</td><td>R$53</td><td>R$60</td><td>R$75</td></tr>
+          <tr><td><span class="item-title">Chapadão</span>Presunto, mussarela, bacon, champignon e cebola</td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+          <tr><td><span class="item-title">Frango</span>Frango e mussarela</td><td>R$43</td><td>R$50</td><td>R$60</td></tr>
+          <tr><td><span class="item-title">Frango c/ Catupiry</span>Frango, mussarela e catupiry</td><td>R$50</td><td>R$56</td><td>R$72</td></tr>
+          <tr><td><span class="item-title">Pollo</span>Frango, mussarela, milho, palmito e azeitona</td><td>R$53</td><td>R$60</td><td>R$75</td></tr>
+          <tr><td><span class="item-title">Caipirona</span>Frango, mussarela, milho, catupiry, tomate e azeitona</td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+          <tr><td><span class="item-title">Calabresa</span>Calabresa e mussarela</td><td>R$43</td><td>R$50</td><td>R$60</td></tr>
+          <tr><td><span class="item-title">Baiana</span>Calabresa picada, mussarela e molho de pimenta</td><td>R$43</td><td>R$50</td><td>R$60</td></tr>
+          <tr><td><span class="item-title">Salame</span>Salame, mussarela e cebola</td><td>R$50</td><td>R$57</td><td>R$70</td></tr>
+          <tr><td><span class="item-title">Árabe</span>Carne moída, mussarela, catupiry, cebola, pimenta calabresa e hortelã</td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+          <tr><td><span class="item-title">Bacalhau</span>Bacalhau e mussarela</td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+        </tbody>
+      </table>
+
+      <p class="menu-category-title">Pizzas Especiais</p>
+      <p class="menu-category-sub">Pequena | Média | Grande</p>
+      <table class="menu-table">
+        <thead><tr><th>Sabor</th><th>P</th><th>M</th><th>G</th></tr></thead>
+        <tbody>
+          <tr><td><span class="item-title">Atum</span>Atum, mussarela e cebola</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          <tr><td><span class="item-title">Peruana</span>Atum, mussarela, tomate, cebola e azeitona</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          <tr><td><span class="item-title">Camarão</span>Camarão e mussarela</td><td>R$70</td><td>R$82</td><td>R$95</td></tr>
+          <tr><td><span class="item-title">Catumarão</span>Camarão, mussarela e catupiry</td><td>R$76</td><td>R$88</td><td>R$100</td></tr>
+          <tr><td><span class="item-title">Lombinho</span>Lombo defumado, mussarela e azeitona</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          <tr><td><span class="item-title">Peru</span>Peito de Peru defumado, mussarela e catupiry</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          <tr><td><span class="item-title">Pepperoni</span>Pepperoni, mussarela e cebola</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          <tr><td><span class="item-title">Vegetariana</span>Palmito, mussarela, champignon, ervilha, tomate, pimentão, cebola e azeitona</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          <tr><td><span class="item-title">Genovese</span>Atum, mussarela, champignon, catupiry e azeitona</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          <tr><td><span class="item-title">Quatro Stagione</span>Presunto, mussarela, bacon, champignon e catupiry</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          <tr><td><span class="item-title">Czarina</span>Lombo defumado, mussarela, provolone, tomate e azeitona</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          <tr><td><span class="item-title">Tomate Seco</span>Tomate seco, mussarela, manjericão e parmesão</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          <tr><td><span class="item-title">A Sua</span>Mussarela + 3 ingredientes à sua escolha</td><td>R$70</td><td>R$82</td><td>R$95</td></tr>
+          <tr><td><span class="item-title">Troppo</span>Mussarela, presunto, frango, milho, catupiry, calabresa, tomate, pimentão, cebola e azeitona</td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+        </tbody>
+      </table>
+
+      <p class="menu-category-title">Bordas Recheadas & Doces</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Borda Catupiry ou Mussarela</span><span class="menu-item-price"><span class="price-small">Média R$18 / Grande R$22</span></span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Romeu e Julieta</span><span class="menu-item-price">R$43/50/60</span></div>
+          <p class="menu-item-desc">Goiabada, mussarela e canela em pó.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Brigadeiro</span><span class="menu-item-price">R$48/54/68</span></div>
+          <p class="menu-item-desc">Brigadeiro, mussarela e chocolate granulado.</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="menu-panel" id="tab-petiscos">
+      <p class="menu-category-title">Petiscos</p>
+      <p class="menu-category-sub">Para compartilhar</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Filezinho Mignon Apimentado</span><span class="menu-item-price">R$88</span></div>
+          <p class="menu-item-desc">Com cesta de pão.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Filezinho Mignon Madeira</span><span class="menu-item-price">R$88</span></div>
+          <p class="menu-item-desc">Com cesta de pão.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Filezinho Mignon Quatro Queijos</span><span class="menu-item-price">R$88</span></div>
+          <p class="menu-item-desc">Com cesta de pão.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Filezinho Mignon Acebolado</span><span class="menu-item-price">R$88</span></div>
+          <p class="menu-item-desc">Com farofa e vinagrete.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Carne do Sol Acebolada</span><span class="menu-item-price">R$88</span></div>
+          <p class="menu-item-desc">Com farofa e vinagrete.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Filezinho de Bode Acebolado</span><span class="menu-item-price">R$88</span></div>
+          <p class="menu-item-desc">Com farofa e vinagrete ou farofa d'água.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Filezinho de Cordeiro Acebolado</span><span class="menu-item-price">R$88</span></div>
+          <p class="menu-item-desc">Com farofa e vinagrete ou farofa d'água.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Torresmo</span><span class="menu-item-price">R$35</span></div>
+          <p class="menu-item-desc">Com geleia de pimenta.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Tábua de Frios</span><span class="menu-item-price">R$80</span></div>
+          <p class="menu-item-desc">Azeitona, queijo, presunto, palmito, lombo defumado e salame.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Mista de Frios</span><span class="menu-item-price">R$46</span></div>
+          <p class="menu-item-desc">Azeitona, presunto, queijo e salame.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Escondidinho de Carne</span><span class="menu-item-price">R$90</span></div>
+          <p class="menu-item-desc">Cubos de carne, bacon, calabresa defumada, feijão, catupiry, mussarela, purê de batata e tomates.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Escondidinho de Costela</span><span class="menu-item-price">R$90</span></div>
+          <p class="menu-item-desc">Costela bovina temperada, catupiry e purê de aipim gratinado.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Escondidinho de Camarão</span><span class="menu-item-price">R$120</span></div>
+          <p class="menu-item-desc">Camarão, catupiry e purê de aipim gratinado.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Camarão Alho e Oléo</span><span class="menu-item-price">R$55</span></div>
+          <p class="menu-item-desc">Camarão flambado no alho e azeite.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Paraíba</span><span class="menu-item-price">R$60</span></div>
+          <p class="menu-item-desc">Macaxeira ou batata frita com carne do sol.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Iscas de Frango</span><span class="menu-item-price">R$45</span></div>
+          <p class="menu-item-desc">Filé de frango com empanado especial. Acompanha molho rosé.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Camarão Troppo</span><span class="menu-item-price">R$50</span></div>
+          <p class="menu-item-desc">Filé de camarão com empanado especial. Acompanha molho aiole.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Linguiça Artesanal</span><span class="menu-item-price">R$50</span></div>
+          <p class="menu-item-desc">Suína ou cordeiro. Tradicional ou apimentada. Acompanha farofa e vinagrete.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Costelinha Suína</span><span class="menu-item-price">R$42</span></div>
+          <p class="menu-item-desc">Com batata frita, cheddar, bacon e molho barbecue.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Tripa Suína</span><span class="menu-item-price">R$40</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Macaxeira</span><span class="menu-item-price">R$20</span></div>
+          <p class="menu-item-desc">Aipim frito em cubos.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Batata Frita</span><span class="menu-item-price">R$22</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Batata Frita c/ Cheddar e Bacon</span><span class="menu-item-price">R$28</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Caldo de Macaxeira</span><span class="menu-item-price">R$17</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Salame</span><span class="menu-item-price">R$28</span></div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="menu-panel" id="tab-outros">
+      <p class="menu-category-title">Saladas</p>
+      <p class="menu-category-sub">Para 2 pessoas | Individual</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Nona</span><span class="menu-item-price">R$46 <span class="price-small">/ indiv. R$32</span></span></div>
+          <p class="menu-item-desc">Alface, tomate, cebola, pimentão, cenoura e azeitonas.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Troppo</span><span class="menu-item-price">R$58 <span class="price-small">/ indiv. R$38</span></span></div>
+          <p class="menu-item-desc">Alface, tomate, pimentão, cebola, cenoura, palmito, champignon, bacon, milho, azeitonas, ervilhas e ovos.</p>
+        </div>
+      </div>
+
+      <p class="menu-category-title">Guarnições</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Arroz</span><span class="menu-item-price">R$10</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Farofa</span><span class="menu-item-price">R$10</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Feijão Tropeiro</span><span class="menu-item-price">R$10</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Salada Vinagrete</span><span class="menu-item-price">R$10</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Tomates c/ Manjericão</span><span class="menu-item-price">R$10</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Cesta de Pão (baguete italiana)</span><span class="menu-item-price">R$10</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Pirão de Leite</span><span class="menu-item-price">R$15</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Purê de Batata</span><span class="menu-item-price">R$15</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Molho Barbecue</span><span class="menu-item-price">R$5</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Molho Aiole</span><span class="menu-item-price">R$5</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Molho Rosé</span><span class="menu-item-price">R$5</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Geleia de Pimenta</span><span class="menu-item-price">R$5</span></div></div>
+      </div>
+
+      <p class="menu-category-title">Sobremesas</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Doce de Leite — Ambrosia</span><span class="menu-item-price">R$15</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Brownie com Sorvete</span><span class="menu-item-price">R$20</span></div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="menu-panel" id="tab-bebidas">
+      <p class="menu-category-title">Sucos & Água</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Suco Natural — Taça 450ml</span><span class="menu-item-price">R$12</span></div>
+          <p class="menu-item-desc">Sem conservantes. Laranja, Limão, Abacaxi, Acerola, Manga, Goiaba, Morango, Cajá.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Água Mineral s/ Gás 500ml</span><span class="menu-item-price">R$4</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Água Mineral c/ Gás 500ml</span><span class="menu-item-price">R$5</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Água Tônica 350ml</span><span class="menu-item-price">R$8</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Nespresso</span><span class="menu-item-price">R$8</span></div>
+          <p class="menu-item-desc">Café expresso.</p>
+        </div>
+      </div>
+
+      <p class="menu-category-title">Refrigerantes</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Refrigerante 350ml</span><span class="menu-item-price">R$8</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Refrigerante 1 Litro</span><span class="menu-item-price">R$15</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Coca-Cola KS</span><span class="menu-item-price">R$7</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Schweppes Citrus 350ml</span><span class="menu-item-price">R$8</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">H2OH! 500ml</span><span class="menu-item-price">R$9</span></div></div>
+      </div>
+
+      <p class="menu-category-title">Cervejas</p>
+      <p class="menu-category-sub">600ml</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Heineken</span><span class="menu-item-price">R$20</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Amstel</span><span class="menu-item-price">R$15</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Devassa</span><span class="menu-item-price">R$12</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Budweiser</span><span class="menu-item-price">R$18</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Antarctica Original</span><span class="menu-item-price">R$18</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Spaten</span><span class="menu-item-price">R$18</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Stella Artois</span><span class="menu-item-price">R$18</span></div></div>
+      </div>
+      <p class="menu-category-sub" style="margin-top:0; margin-bottom:1rem;">Long Neck</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Heineken</span><span class="menu-item-price">R$12</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Heineken Zero Álcool</span><span class="menu-item-price">R$12</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Budweiser</span><span class="menu-item-price">R$12</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Spaten</span><span class="menu-item-price">R$12</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Stella Artois</span><span class="menu-item-price">R$12</span></div></div>
+      </div>
+
+      <p class="menu-category-title">Drinques & Coquetéis</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Margherita Blue</span><span class="menu-item-price">R$38</span></div>
+          <p class="menu-item-desc">Licor de curaçau, tequila, cointreau e limão.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Margherita</span><span class="menu-item-price">R$32</span></div>
+          <p class="menu-item-desc">Tequila, cointreau e limão.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Coquetel de Frutas c/ Álcool</span><span class="menu-item-price">R$25</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Coquetel de Frutas s/ Álcool</span><span class="menu-item-price">R$20</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Caipiríssima</span><span class="menu-item-price">R$22</span></div>
+          <p class="menu-item-desc">Com Bacardi.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Caipirosca</span><span class="menu-item-price">R$20</span></div>
+          <p class="menu-item-desc">Com Smirnoff.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Caipirinha</span><span class="menu-item-price">R$20</span></div>
+          <p class="menu-item-desc">Com Sagatiba.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Caipimel</span><span class="menu-item-price">R$25</span></div>
+          <p class="menu-item-desc">Com Sagatiba, mel e hortelã.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Gin Blackberry</span><span class="menu-item-price">R$25</span></div>
+          <p class="menu-item-desc">Com Gin, tônica, morango e hortelã.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Aperol Fresh (Smirnoff)</span><span class="menu-item-price">R$25</span></div>
+          <p class="menu-item-desc">Aperol, Vodka Smirnoff, laranja e hortelã.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Aperol Fresh (Absolut)</span><span class="menu-item-price">R$30</span></div>
+          <p class="menu-item-desc">Aperol, Vodka Absolut, laranja e hortelã.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Red Bull</span><span class="menu-item-price">R$20</span></div>
+        </div>
+      </div>
+
+      <p class="menu-category-title">Doses & Destilados</p>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Whisky Old Parr 12 anos</span><span class="menu-item-price">R$20</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Vodka Absolut</span><span class="menu-item-price">R$16</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Vodka Smirnoff</span><span class="menu-item-price">R$10</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Cachaça Serra das Almas / Sagatiba</span><span class="menu-item-price">R$10</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Tequila</span><span class="menu-item-price">R$20</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Gin</span><span class="menu-item-price">R$15</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Campari</span><span class="menu-item-price">R$15</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Cointreau</span><span class="menu-item-price">R$22</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Amarula</span><span class="menu-item-price">R$25</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Conhaque</span><span class="menu-item-price">R$10</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Keep Coller</span><span class="menu-item-price">R$20</span></div></div>
+        <div class="menu-item"><div class="menu-item-header"><span class="menu-item-name">Skol Beats</span><span class="menu-item-price">R$12</span></div></div>
+      </div>
+
+      <p class="menu-category-title">Vinhos</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Vinho da Casa — Taça 250ml</span><span class="menu-item-price">R$16</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Vinhos Nacionais e Importados</span><span class="menu-item-price">—</span></div>
+          <p class="menu-item-desc">Ver rótulos disponíveis.</p>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header"><span class="menu-item-name">Champagne, Espumantes & Licores</span><span class="menu-item-price">—</span></div>
+          <p class="menu-item-desc">Ver rótulos disponíveis.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<div id="instagram">
+  <div class="container insta-content">
+    <p>Siga nas redes sociais</p>
+    <h3>Acompanhe o Troppo no Instagram</h3>
+    <a href="https://instagram.com/restaurantetroppo" target="_blank" class="insta-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @restaurantetroppo
+    </a>
+  </div>
+</div>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">Troppo</div>
+    <p class="footer-tagline">Seja bem vindo</p>
+    <p class="footer-copy">© 2026 Troppo Restaurante — Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<script>
+  
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      document.getElementById('cardapio').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  
+  const hamburger = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+</script>
+</body>
+</html>
