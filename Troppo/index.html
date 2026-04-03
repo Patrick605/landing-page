@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Troppo Restaurante — Cardápio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  
+<header class="hero">
+  <div class="hero-badge">Restaurante & Pizzaria</div>
+  <h1>Troppo <em>Restaurante</em></h1>
+  <p class="hero-sub">Cardápio Completo</p>
+  <div class="hero-divider"></div>
+</header>
+
+<div class="search-wrap">
+  <input type="text" id="search-input" placeholder="Buscar prato, pizza, bebida…" autocomplete="off">
+  <span class="search-icon">🔍</span>
+</div>
+<div id="search-count"></div>
+
+
+<div class="tabs-outer">
+  <nav class="tabs" id="tabs">
+    <div class="tab active" data-section="executivos">Executivos</div>
+    <div class="tab" data-section="forno">Forno</div>
+    <div class="tab" data-section="chapa">Na Chapa</div>
+    <div class="tab" data-section="massas">Massas</div>
+    <div class="tab" data-section="pizzas">Pizzas</div>
+    <div class="tab" data-section="petiscos">Petiscos</div>
+    <div class="tab" data-section="saladas">Saladas</div>
+    <div class="tab" data-section="bebidas">Bebidas</div>
+  </nav>
+</div>
+
+<main>
+  <div id="no-results" class="no-results"><span>🍽️</span>Nenhum item encontrado para "<span id="no-results-term"></span>"</div>
+
+  
+  <section class="section" id="sec-executivos">
+    <h2 class="section-title">Executivos do Dia</h2>
+    <p class="section-note">Pratos individuais</p>
+    <div class="items-grid">
+      <div class="item-card" data-search="carne do sol pirão feijão tropeiro arroz">
+        <div class="item-info"><div class="item-name">Carne do Sol</div><div class="item-desc">Com pirão de leite, arroz branco, feijão tropeiro e tomates com manjericão.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$65</div>
+        <button class="add-btn" onclick="addItem('Carne do Sol', 65)">
+  Adicionar
+</button>
+      </div>
+      </div>
+      <div class="item-card" data-search="filé parmegiana mignon frango arroz purê batata frita">
+        <div class="item-info"><div class="item-name">Filé à Parmegiana</div><div class="item-desc">Filé mignon ou filé de frango com arroz branco, purê, batata frita e tomates com manjericão.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$65</div>
+        <button class="add-btn" onclick="addItem('Filé à Parmegiana', 65)">
+  Adicionar
+</button>
+      </div>
+      </div>
+      <div class="item-card" data-search="filé frango chef milanesa molho branco bacon arroz batata soutê">
+        <div class="item-info"><div class="item-name">Filé de Frango a Moda do Chef</div><div class="item-desc">À milanesa com molho branco, bacon, arroz, batata soutê e tomates com manjericão.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$65</div>
+        <button class="add-btn" onclick="addItem('Filé de Frango a Moda do Chef', 65)">
+  Adicionar
+</button>
+      </div>
+      </div>
+      <div class="item-card" data-search="filé frango grelhado arroz salada nona batata soutê">
+        <div class="item-info"><div class="item-name">Filé de Frango Grelhado</div><div class="item-desc">Com arroz branco, salada nona e batata soutê.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$60</div>
+      </div>
+      </div>
+      <div class="item-card" data-search="salmão grelhado arroz salada nona batata">
+        <div class="item-info"><div class="item-name">Salmão Grelhado</div><div class="item-desc">Com arroz branco, salada nona e batata soutê.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$75</div></div>
+      </div>
+      <div class="item-card" data-search="salmão troppo talharim molho branco bacon manjericão tomate cereja manteiga">
+        <div class="item-info"><div class="item-name">Salmão Troppo</div><div class="item-desc">Com talharim ao molho branco, bacon, manjericão e tomate cereja salteado na manteiga de ervas.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$75</div></div>
+      </div>
+      <div class="item-card" data-search="strogonoff frango arroz purê batata frita">
+        <div class="item-info"><div class="item-name">Strogonoff de Frango</div><div class="item-desc">Com arroz branco, purê de batata, batata frita e tomates com manjericão.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$65</div></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="sec-forno" style="display:none">
+    <h2 class="section-title">Ao Forno</h2>
+    <p class="section-note">Para 2 pessoas • acompanha arroz e purê de batatas</p>
+
+    <div class="subsection">
+      <div class="subsection-title">Filé Mignon ao Forno</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="filé mignon parmegiana milanesa mussarela presunto molho tomates parmesão">
+          <div class="item-info"><div class="item-name">À Parmegiana</div><div class="item-desc">À milanesa com mussarela, presunto, molho de tomates, parmesão, arroz e purê de batatas.</div></div>
+          <div class="item-price-wrap"><div class="item-price">R$135</div></div>
+        </div>
+        <div class="item-card" data-search="filé mignon chef milanesa molho branco bacon manjericão">
+          <div class="item-info"><div class="item-name">A Moda do Chef</div><div class="item-desc">À milanesa com molho branco, bacon, manjericão, arroz e purê de batatas.</div></div>
+          <div class="item-price-wrap"><div class="item-price">R$135</div></div>
+        </div>
+        <div class="item-card" data-search="filé mignon apimentado molho aurora champignon bacon">
+          <div class="item-info"><div class="item-name">Apimentado</div><div class="item-desc">Molho aurora apimentado, champignon, bacon, arroz e purê de batatas.</div></div>
+          <div class="item-price-wrap"><div class="item-price">R$135</div></div>
+        </div>
+        <div class="item-card" data-search="filé mignon madeira molho champignon">
+          <div class="item-info"><div class="item-name">Madeira</div><div class="item-desc">Molho madeira, champignon, arroz e purê de batatas.</div></div>
+          <div class="item-price-wrap"><div class="item-price">R$135</div></div>
+        </div>
+        <div class="item-card" data-search="filé mignon quatro queijos mussarela gorgonzola provolone parmesão molho branco">
+          <div class="item-info"><div class="item-name">Quatro Queijos</div><div class="item-desc">Com mussarela, gorgonzola, provolone, parmesão, molho branco, arroz e purê de batatas.</div></div>
+          <div class="item-price-wrap"><div class="item-price">R$135</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Filé de Frango ao Forno</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="frango parmegiana milanesa mussarela presunto molho tomates parmesão">
+          <div class="item-info"><div class="item-name">À Parmegiana</div><div class="item-desc">À milanesa com mussarela, presunto, molho de tomates, parmesão, arroz e purê de batatas.</div></div>
+          <div class="item-price-wrap"><div class="item-price">R$115</div></div>
+        </div>
+        <div class="item-card" data-search="frango chef milanesa molho branco bacon manjericão">
+          <div class="item-info"><div class="item-name">A Moda do Chef</div><div class="item-desc">À milanesa com molho branco, bacon, manjericão, arroz e purê de batatas.</div></div>
+          <div class="item-price-wrap"><div class="item-price">R$115</div></div>
+        </div>
+        <div class="item-card" data-search="frango quatro queijos mussarela gorgonzola provolone parmesão molho branco">
+          <div class="item-info"><div class="item-name">Quatro Queijos</div><div class="item-desc">Com mussarela, gorgonzola, provolone, parmesão, molho branco, arroz e purê de batatas.</div></div>
+          <div class="item-price-wrap"><div class="item-price">R$115</div></div>
+        </div>
+        <div class="item-card" data-search="frango strogonoff palmito champignon creme de leite">
+          <div class="item-info"><div class="item-name">Strogonoff</div><div class="item-desc">Em cubos, com palmito, champignon, molho de creme de leite, arroz e purê de batatas.</div></div>
+          <div class="item-price-wrap"><div class="item-price">R$135</div></div>
+        </div>
+        <div class="item-card" data-search="frango troppo cerveja orégano molho branco mussarela presunto champignon azeitona">
+          <div class="item-info"><div class="item-name">Troppo</div><div class="item-desc">À milanesa, marinado com cerveja e orégano, molho branco, mussarela, presunto, champignon, azeitona, arroz e purê de batatas.</div></div>
+          <div class="item-price-wrap"><div class="item-price">R$145</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="section" id="sec-chapa" style="display:none">
+    <h2 class="section-title">Na Chapa</h2>
+    <p class="section-note">Para 2 pessoas • acompanha feijão tropeiro, arroz, vinagrete e farofa</p>
+    <div class="items-grid">
+      <div class="item-card" data-search="picanha maturatta queijo coalho feijão tropeiro">
+        <div class="item-info"><div class="item-name">Picanha Maturatta</div><div class="item-desc">Com queijo coalho, feijão tropeiro, arroz, vinagrete e farofa.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$155</div></div>
+      </div>
+      <div class="item-card" data-search="carne do sol feijão tropeiro arroz vinagrete farofa">
+        <div class="item-info"><div class="item-name">Carne do Sol</div><div class="item-desc">Com feijão tropeiro, arroz, vinagrete e farofa.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$135</div></div>
+      </div>
+      <div class="item-card" data-search="filé mignon chapa feijão arroz vinagrete farofa">
+        <div class="item-info"><div class="item-name">Filé Mignon</div><div class="item-desc">Com feijão tropeiro, arroz, vinagrete e farofa.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$135</div></div>
+      </div>
+      <div class="item-card" data-search="filé frango chapa feijão arroz vinagrete farofa">
+        <div class="item-info"><div class="item-name">Filé de Frango</div><div class="item-desc">Com feijão tropeiro, arroz, vinagrete e farofa.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$115</div></div>
+      </div>
+      <div class="item-card" data-search="bode chapa feijão arroz vinagrete farofa">
+        <div class="item-info"><div class="item-name">Bode</div><div class="item-desc">Com feijão tropeiro, arroz, vinagrete e farofa.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$135</div></div>
+      </div>
+      <div class="item-card" data-search="cordeiro chapa feijão arroz vinagrete farofa">
+        <div class="item-info"><div class="item-name">Cordeiro</div><div class="item-desc">Com feijão tropeiro, arroz, vinagrete e farofa.</div></div>
+        <div class="item-price-wrap"><div class="item-price">R$135</div></div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="section" id="sec-massas" style="display:none">
+    <h2 class="section-title">Massas</h2>
+    <p class="section-note">Para 2 pessoas</p>
+
+    <div class="subsection">
+      <div class="subsection-title">Spaghetti & Talharim</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="spaghetti talharim al sugo molho tomates massa"><div class="item-info"><div class="item-name">Al Sugo</div><div class="item-desc">Molho de tomates.</div></div><div class="item-price-wrap"><div class="item-price">R$52</div></div></div>
+        <div class="item-card" data-search="spaghetti talharim alho óleo azeite massa"><div class="item-info"><div class="item-name">Alho e Óleo</div><div class="item-desc">Alho dourado no azeite de oliva.</div></div><div class="item-price-wrap"><div class="item-price">R$52</div></div></div>
+        <div class="item-card" data-search="spaghetti talharim bolonhesa carne bovina moída molho tomates massa"><div class="item-info"><div class="item-name">Bolonhesa</div><div class="item-desc">Molho de tomates e carne bovina moída.</div></div><div class="item-price-wrap"><div class="item-price">R$70</div></div></div>
+        <div class="item-card" data-search="spaghetti talharim camarão molho branco massa frutos do mar"><div class="item-info"><div class="item-name">Camarão</div><div class="item-desc">Camarões fundidos no molho branco.</div></div><div class="item-price-wrap"><div class="item-price">R$140</div></div></div>
+        <div class="item-card" data-search="spaghetti talharim frango molho tomates bacon desfiado massa"><div class="item-info"><div class="item-name">Frango</div><div class="item-desc">Molho de tomates, bacon e frango desfiado.</div></div><div class="item-price-wrap"><div class="item-price">R$70</div></div></div>
+        <div class="item-card" data-search="spaghetti talharim quatro queijos mussarela gorgonzola provolone parmesão molho branco massa"><div class="item-info"><div class="item-name">Quatro Queijos</div><div class="item-desc">Mussarela, gorgonzola, provolone e parmesão fundidos no molho branco.</div></div><div class="item-price-wrap"><div class="item-price">R$90</div></div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Lasanhas</div>
+      <div class="table-wrap">
+        <table class="price-table">
+          <thead><tr><th>Sabor</th><th>Média</th><th>Grande</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Bolonhesa</strong><div class="item-subdesc">Mussarela, carne bovina e molho de tomates polvilhado com parmesão ralado.</div></td><td>R$77</td><td>R$90</td></tr>
+            <tr><td><strong>Frango</strong><div class="item-subdesc">Mussarela, frango desfiado e molho de tomate polvilhado com parmesão ralado.</div></td><td>R$77</td><td>R$90</td></tr>
+            <tr><td><strong>Troppo</strong><div class="item-subdesc">Mussarela, presunto, frango desfiado, molho branco e molho de tomate polvilhado com parmesão.</div></td><td>R$84</td><td>R$98</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Calzones</div>
+      <div class="table-wrap">
+        <table class="price-table">
+          <thead><tr><th>Tipo</th><th>P</th><th>M</th><th>G</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Tradicionais</strong><div class="item-subdesc">Todos os sabores das Pizzas Tradicionais.</div></td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+            <tr><td><strong>Especiais</strong><div class="item-subdesc">Todos os sabores das Pizzas Especiais.</div></td><td>R$70</td><td>R$82</td><td>R$95</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Pastel & Pastelzinho</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="pastel queijo presunto frango carne catupiry"><div class="item-info"><div class="item-name">Pastel — Queijo / Presunto / Frango / Carne</div><div class="item-desc">Tradicional ou com catupiry.</div></div><div class="item-price-wrap"><div class="item-price">R$22</div><div class="item-price-sub">c/ catupiry R$27</div></div></div>
+        <div class="item-card" data-search="pastel camarão bacalhau catupiry"><div class="item-info"><div class="item-name">Pastel — Camarão / Bacalhau</div><div class="item-desc">Tradicional ou com catupiry.</div></div><div class="item-price-wrap"><div class="item-price">R$32</div><div class="item-price-sub">c/ catupiry R$38</div></div></div>
+        <div class="item-card" data-search="pastelzinho frango presunto 6 unidades catupiry"><div class="item-info"><div class="item-name">Pastelzinho Frango / Presunto (6un)</div><div class="item-desc">Tradicional ou com catupiry.</div></div><div class="item-price-wrap"><div class="item-price">R$35</div><div class="item-price-sub">c/ catupiry R$40</div></div></div>
+        <div class="item-card" data-search="pastelzinho camarão bacalhau 6 unidades catupiry"><div class="item-info"><div class="item-name">Pastelzinho Camarão / Bacalhau (6un)</div><div class="item-desc">Tradicional ou com catupiry.</div></div><div class="item-price-wrap"><div class="item-price">R$46</div><div class="item-price-sub">c/ catupiry R$52</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="sec-pizzas" style="display:none">
+    <h2 class="section-title">Pizzas</h2>
+
+    <div class="subsection">
+      <div class="subsection-title">Tradicionais — Pequena | Média | Grande</div>
+      <div class="table-wrap">
+        <table class="price-table">
+          <thead><tr><th>Sabor</th><th>P</th><th>M</th><th>G</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Mussarela</strong><div class="item-subdesc">Mussarela</div></td><td>R$43</td><td>R$50</td><td>R$60</td></tr>
+            <tr><td><strong>Milho</strong><div class="item-subdesc">Mussarela e milho</div></td><td>R$43</td><td>R$50</td><td>R$67</td></tr>
+            <tr><td><strong>Margherita</strong><div class="item-subdesc">Mussarela, tomate e manjericão</div></td><td>R$48</td><td>R$54</td><td>R$67</td></tr>
+            <tr><td><strong>Gratinada</strong><div class="item-subdesc">Mussarela, catupiry, parmesão e azeitona</div></td><td>R$53</td><td>R$60</td><td>R$75</td></tr>
+            <tr><td><strong>Quatro Queijos</strong><div class="item-subdesc">Mussarela, provolone, gorgonzola e catupiry</div></td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+            <tr><td><strong>Bauru</strong><div class="item-subdesc">Presunto, mussarela, tomate e azeitona</div></td><td>R$53</td><td>R$60</td><td>R$75</td></tr>
+            <tr><td><strong>Portuguesa</strong><div class="item-subdesc">Presunto, mussarela, ervilha, ovos, cebola e azeitona</div></td><td>R$53</td><td>R$60</td><td>R$75</td></tr>
+            <tr><td><strong>Chapadão</strong><div class="item-subdesc">Presunto, mussarela, bacon, champignon e cebola</div></td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+            <tr><td><strong>Frango</strong><div class="item-subdesc">Frango e mussarela</div></td><td>R$43</td><td>R$50</td><td>R$60</td></tr>
+            <tr><td><strong>Frango c/ Catupiry</strong><div class="item-subdesc">Frango, mussarela e catupiry</div></td><td>R$50</td><td>R$56</td><td>R$72</td></tr>
+            <tr><td><strong>Pollo</strong><div class="item-subdesc">Frango, mussarela, milho, palmito e azeitona</div></td><td>R$53</td><td>R$60</td><td>R$75</td></tr>
+            <tr><td><strong>Caipirona</strong><div class="item-subdesc">Frango, mussarela, milho, catupiry, tomate e azeitona</div></td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+            <tr><td><strong>Calabresa</strong><div class="item-subdesc">Calabresa e mussarela</div></td><td>R$43</td><td>R$50</td><td>R$60</td></tr>
+            <tr><td><strong>Baiana</strong><div class="item-subdesc">Calabresa picada, mussarela e molho de pimenta</div></td><td>R$43</td><td>R$50</td><td>R$60</td></tr>
+            <tr><td><strong>Salame</strong><div class="item-subdesc">Salame, mussarela e cebola</div></td><td>R$50</td><td>R$57</td><td>R$70</td></tr>
+            <tr><td><strong>Árabe</strong><div class="item-subdesc">Carne moída, mussarela, catupiry, cebola, pimenta calabresa e hortelã</div></td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+            <tr><td><strong>Bacalhau</strong><div class="item-subdesc">Bacalhau e mussarela</div></td><td>R$57</td><td>R$65</td><td>R$78</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Especiais — Pequena | Média | Grande</div>
+      <div class="table-wrap">
+        <table class="price-table">
+          <thead><tr><th>Sabor</th><th>P</th><th>M</th><th>G</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Atum</strong><div class="item-subdesc">Atum, mussarela e cebola</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+            <tr><td><strong>Peruana</strong><div class="item-subdesc">Atum, mussarela, tomate, cebola e azeitona</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+            <tr><td><strong>Camarão</strong><div class="item-subdesc">Camarão e mussarela</div></td><td>R$70</td><td>R$82</td><td>R$95</td></tr>
+            <tr><td><strong>Catumarão</strong><div class="item-subdesc">Camarão, mussarela e catupiry</div></td><td>R$76</td><td>R$88</td><td>R$100</td></tr>
+            <tr><td><strong>Lombinho</strong><div class="item-subdesc">Lombo defumado, mussarela e azeitona</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+            <tr><td><strong>Peru</strong><div class="item-subdesc">Peito de Peru defumado, mussarela e catupiry</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+            <tr><td><strong>Pepperoni</strong><div class="item-subdesc">Pepperoni, mussarela e cebola</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+            <tr><td><strong>Vegetariana</strong><div class="item-subdesc">Palmito, mussarela, champignon, ervilha, tomate, pimentão, cebola e azeitona</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+            <tr><td><strong>Genovese</strong><div class="item-subdesc">Atum, mussarela, champignon, catupiry e azeitona</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+            <tr><td><strong>Quatro Stagione</strong><div class="item-subdesc">Presunto, mussarela, bacon, champignon e catupiry</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+            <tr><td><strong>Czarina</strong><div class="item-subdesc">Lombo defumado, mussarela, provolone, tomate e azeitona</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+            <tr><td><strong>Tomate Seco</strong><div class="item-subdesc">Tomate seco, mussarela, manjericão e parmesão</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+            <tr><td><strong>A Sua</strong><div class="item-subdesc">Mussarela + 3 ingredientes à sua escolha</div></td><td>R$70</td><td>R$82</td><td>R$95</td></tr>
+            <tr><td><strong>Troppo</strong><div class="item-subdesc">Mussarela, presunto, frango, milho, catupiry, calabresa, tomate, pimentão, cebola e azeitona</div></td><td>R$63</td><td>R$72</td><td>R$85</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Bordas Recheadas & Doces</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="borda catupiry mussarela recheada pizza"><div class="item-info"><div class="item-name">Borda Catupiry ou Mussarela</div></div><div class="item-price-wrap"><div class="item-price">Média R$18</div><div class="item-price-sub">Grande R$22</div></div></div>
+        <div class="item-card" data-search="pizza doce romeu julieta goiabada mussarela canela"><div class="item-info"><div class="item-name">Romeu e Julieta</div><div class="item-desc">Goiabada, mussarela e canela em pó.</div></div><div class="item-price-wrap"><div class="item-price">R$43/50/60</div></div></div>
+        <div class="item-card" data-search="pizza doce brigadeiro mussarela chocolate granulado"><div class="item-info"><div class="item-name">Brigadeiro</div><div class="item-desc">Brigadeiro, mussarela e chocolate granulado.</div></div><div class="item-price-wrap"><div class="item-price">R$48/54/68</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="sec-petiscos" style="display:none">
+    <h2 class="section-title">Petiscos</h2>
+    <p class="section-note">Para compartilhar</p>
+    <div class="items-grid">
+      <div class="item-card" data-search="filezinho mignon apimentado cesta pão petisco"><div class="item-info"><div class="item-name">Filezinho Mignon Apimentado</div><div class="item-desc">Com cesta de pão.</div></div><div class="item-price-wrap"><div class="item-price">R$88</div></div></div>
+      <div class="item-card" data-search="filezinho mignon madeira cesta pão petisco"><div class="item-info"><div class="item-name">Filezinho Mignon Madeira</div><div class="item-desc">Com cesta de pão.</div></div><div class="item-price-wrap"><div class="item-price">R$88</div></div></div>
+      <div class="item-card" data-search="filezinho mignon quatro queijos cesta pão petisco"><div class="item-info"><div class="item-name">Filezinho Mignon Quatro Queijos</div><div class="item-desc">Com cesta de pão.</div></div><div class="item-price-wrap"><div class="item-price">R$88</div></div></div>
+      <div class="item-card" data-search="filezinho mignon acebolado farofa vinagrete petisco"><div class="item-info"><div class="item-name">Filezinho Mignon Acebolado</div><div class="item-desc">Com farofa e vinagrete.</div></div><div class="item-price-wrap"><div class="item-price">R$88</div></div></div>
+      <div class="item-card" data-search="carne do sol acebolada farofa vinagrete petisco"><div class="item-info"><div class="item-name">Carne do Sol Acebolada</div><div class="item-desc">Com farofa e vinagrete.</div></div><div class="item-price-wrap"><div class="item-price">R$88</div></div></div>
+      <div class="item-card" data-search="filezinho bode acebolado farofa vinagrete petisco"><div class="item-info"><div class="item-name">Filezinho de Bode Acebolado</div><div class="item-desc">Com farofa e vinagrete ou farofa d'água.</div></div><div class="item-price-wrap"><div class="item-price">R$88</div></div></div>
+      <div class="item-card" data-search="filezinho cordeiro acebolado farofa vinagrete petisco"><div class="item-info"><div class="item-name">Filezinho de Cordeiro Acebolado</div><div class="item-desc">Com farofa e vinagrete ou farofa d'água.</div></div><div class="item-price-wrap"><div class="item-price">R$88</div></div></div>
+      <div class="item-card" data-search="torresmo geleia pimenta petisco"><div class="item-info"><div class="item-name">Torresmo</div><div class="item-desc">Com geleia de pimenta.</div></div><div class="item-price-wrap"><div class="item-price">R$35</div></div></div>
+      <div class="item-card" data-search="tábua frios azeitona queijo presunto palmito lombo salame petisco"><div class="item-info"><div class="item-name">Tábua de Frios</div><div class="item-desc">Azeitona, queijo, presunto, palmito, lombo defumado e salame.</div></div><div class="item-price-wrap"><div class="item-price">R$80</div></div></div>
+      <div class="item-card" data-search="mista frios azeitona presunto queijo salame petisco"><div class="item-info"><div class="item-name">Mista de Frios</div><div class="item-desc">Azeitona, presunto, queijo e salame.</div></div><div class="item-price-wrap"><div class="item-price">R$46</div></div></div>
+      <div class="item-card" data-search="escondidinho carne bacon calabresa feijão catupiry mussarela purê batata petisco"><div class="item-info"><div class="item-name">Escondidinho de Carne</div><div class="item-desc">Cubos de carne, bacon, calabresa defumada, feijão, catupiry, mussarela, purê de batata e tomates.</div></div><div class="item-price-wrap"><div class="item-price">R$90</div></div></div>
+      <div class="item-card" data-search="escondidinho costela bovina catupiry purê aipim petisco"><div class="item-info"><div class="item-name">Escondidinho de Costela</div><div class="item-desc">Costela bovina temperada, catupiry e purê de aipim gratinado.</div></div><div class="item-price-wrap"><div class="item-price">R$90</div></div></div>
+      <div class="item-card" data-search="escondidinho camarão catupiry purê aipim petisco frutos do mar"><div class="item-info"><div class="item-name">Escondidinho de Camarão</div><div class="item-desc">Camarão, catupiry e purê de aipim gratinado.</div></div><div class="item-price-wrap"><div class="item-price">R$120</div></div></div>
+      <div class="item-card" data-search="camarão alho óleo azeite flambado petisco"><div class="item-info"><div class="item-name">Camarão Alho e Óleo</div><div class="item-desc">Camarão flambado no alho e azeite.</div></div><div class="item-price-wrap"><div class="item-price">R$55</div></div></div>
+      <div class="item-card" data-search="paraíba macaxeira batata frita carne do sol petisco nordestino"><div class="item-info"><div class="item-name">Paraíba</div><div class="item-desc">Macaxeira ou batata frita com carne do sol.</div></div><div class="item-price-wrap"><div class="item-price">R$60</div></div></div>
+      <div class="item-card" data-search="iscas frango empanado molho rosé petisco"><div class="item-info"><div class="item-name">Iscas de Frango</div><div class="item-desc">Filé de frango com empanado especial. Acompanha molho rosé.</div></div><div class="item-price-wrap"><div class="item-price">R$45</div></div></div>
+      <div class="item-card" data-search="camarão troppo empanado aiole petisco frutos do mar"><div class="item-info"><div class="item-name">Camarão Troppo</div><div class="item-desc">Filé de camarão com empanado especial. Acompanha molho aiole.</div></div><div class="item-price-wrap"><div class="item-price">R$50</div></div></div>
+      <div class="item-card" data-search="linguiça artesanal suína cordeiro apimentada farofa vinagrete petisco"><div class="item-info"><div class="item-name">Linguiça Artesanal</div><div class="item-desc">Suína ou cordeiro. Tradicional ou apimentada. Acompanha farofa e vinagrete.</div></div><div class="item-price-wrap"><div class="item-price">R$50</div></div></div>
+      <div class="item-card" data-search="costelinha suína batata frita cheddar bacon barbecue petisco"><div class="item-info"><div class="item-name">Costelinha Suína</div><div class="item-desc">Com batata frita, cheddar, bacon e molho barbecue.</div></div><div class="item-price-wrap"><div class="item-price">R$42</div></div></div>
+      <div class="item-card" data-search="tripa suína petisco"><div class="item-info"><div class="item-name">Tripa Suína</div></div><div class="item-price-wrap"><div class="item-price">R$40</div></div></div>
+      <div class="item-card" data-search="macaxeira aipim frito cubo petisco"><div class="item-info"><div class="item-name">Macaxeira</div><div class="item-desc">Aipim frito em cubos.</div></div><div class="item-price-wrap"><div class="item-price">R$20</div></div></div>
+      <div class="item-card" data-search="batata frita petisco"><div class="item-info"><div class="item-name">Batata Frita</div></div><div class="item-price-wrap"><div class="item-price">R$22</div></div></div>
+      <div class="item-card" data-search="batata frita cheddar bacon petisco"><div class="item-info"><div class="item-name">Batata Frita c/ Cheddar e Bacon</div></div><div class="item-price-wrap"><div class="item-price">R$28</div></div></div>
+      <div class="item-card" data-search="caldo macaxeira petisco sopa"><div class="item-info"><div class="item-name">Caldo de Macaxeira</div></div><div class="item-price-wrap"><div class="item-price">R$17</div></div></div>
+      <div class="item-card" data-search="salame petisco frio"><div class="item-info"><div class="item-name">Salame</div></div><div class="item-price-wrap"><div class="item-price">R$28</div></div></div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="sec-saladas" style="display:none">
+    <h2 class="section-title">Saladas & Mais</h2>
+
+    <div class="subsection">
+      <div class="subsection-title">Saladas — Para 2 pessoas | Individual</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="salada nona alface tomate cebola pimentão cenoura azeitona"><div class="item-info"><div class="item-name">Nona</div><div class="item-desc">Alface, tomate, cebola, pimentão, cenoura e azeitonas.</div></div><div class="item-price-wrap"><div class="item-price">R$46</div><div class="item-price-sub">indiv. R$32</div></div></div>
+        <div class="item-card" data-search="salada troppo alface tomate pimentão cebola cenoura palmito champignon bacon milho azeitonas ervilhas ovos"><div class="item-info"><div class="item-name">Troppo</div><div class="item-desc">Alface, tomate, pimentão, cebola, cenoura, palmito, champignon, bacon, milho, azeitonas, ervilhas e ovos.</div></div><div class="item-price-wrap"><div class="item-price">R$58</div><div class="item-price-sub">indiv. R$38</div></div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Guarnições</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="arroz guarnição acompanhamento"><div class="item-info"><div class="item-name">Arroz</div></div><div class="item-price-wrap"><div class="item-price">R$10</div></div></div>
+        <div class="item-card" data-search="farofa guarnição"><div class="item-info"><div class="item-name">Farofa</div></div><div class="item-price-wrap"><div class="item-price">R$10</div></div></div>
+        <div class="item-card" data-search="feijão tropeiro guarnição"><div class="item-info"><div class="item-name">Feijão Tropeiro</div></div><div class="item-price-wrap"><div class="item-price">R$10</div></div></div>
+        <div class="item-card" data-search="salada vinagrete guarnição"><div class="item-info"><div class="item-name">Salada Vinagrete</div></div><div class="item-price-wrap"><div class="item-price">R$10</div></div></div>
+        <div class="item-card" data-search="tomates manjericão guarnição"><div class="item-info"><div class="item-name">Tomates c/ Manjericão</div></div><div class="item-price-wrap"><div class="item-price">R$10</div></div></div>
+        <div class="item-card" data-search="cesta pão baguete italiana guarnição"><div class="item-info"><div class="item-name">Cesta de Pão (baguete italiana)</div></div><div class="item-price-wrap"><div class="item-price">R$10</div></div></div>
+        <div class="item-card" data-search="pirão leite guarnição"><div class="item-info"><div class="item-name">Pirão de Leite</div></div><div class="item-price-wrap"><div class="item-price">R$15</div></div></div>
+        <div class="item-card" data-search="purê batata guarnição"><div class="item-info"><div class="item-name">Purê de Batata</div></div><div class="item-price-wrap"><div class="item-price">R$15</div></div></div>
+        <div class="item-card" data-search="molho barbecue guarnição"><div class="item-info"><div class="item-name">Molho Barbecue</div></div><div class="item-price-wrap"><div class="item-price">R$5</div></div></div>
+        <div class="item-card" data-search="molho aiole guarnição"><div class="item-info"><div class="item-name">Molho Aiole</div></div><div class="item-price-wrap"><div class="item-price">R$5</div></div></div>
+        <div class="item-card" data-search="molho rosé guarnição"><div class="item-info"><div class="item-name">Molho Rosé</div></div><div class="item-price-wrap"><div class="item-price">R$5</div></div></div>
+        <div class="item-card" data-search="geleia pimenta guarnição"><div class="item-info"><div class="item-name">Geleia de Pimenta</div></div><div class="item-price-wrap"><div class="item-price">R$5</div></div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">Sobremesas</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="doce leite ambrosia sobremesa"><div class="item-info"><div class="item-name">Doce de Leite — Ambrosia</div></div><div class="item-price-wrap"><div class="item-price">R$15</div></div></div>
+        <div class="item-card" data-search="brownie sorvete sobremesa chocolate"><div class="item-info"><div class="item-name">Brownie com Sorvete</div></div><div class="item-price-wrap"><div class="item-price">R$20</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="sec-bebidas" style="display:none">
+    <h2 class="section-title">Bebidas</h2>
+
+    <div class="drinks-group">
+      <div class="drinks-group-title">Sucos & Água</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="suco natural laranja limão abacaxi acerola manga goiaba morango cajá 450ml"><div class="item-info"><div class="item-name">Suco Natural — Taça 450ml</div><div class="item-desc">Sem conservantes. Laranja, Limão, Abacaxi, Acerola, Manga, Goiaba, Morango, Cajá.</div></div><div class="item-price-wrap"><div class="item-price">R$12</div></div></div>
+        <div class="item-card" data-search="água mineral sem gás 500ml"><div class="item-info"><div class="item-name">Água Mineral s/ Gás 500ml</div></div><div class="item-price-wrap"><div class="item-price">R$4</div></div></div>
+        <div class="item-card" data-search="água mineral com gás 500ml"><div class="item-info"><div class="item-name">Água Mineral c/ Gás 500ml</div></div><div class="item-price-wrap"><div class="item-price">R$5</div></div></div>
+        <div class="item-card" data-search="água tônica 350ml"><div class="item-info"><div class="item-name">Água Tônica 350ml</div></div><div class="item-price-wrap"><div class="item-price">R$8</div></div></div>
+        <div class="item-card" data-search="nespresso café expresso bebida"><div class="item-info"><div class="item-name">Nespresso</div><div class="item-desc">Café expresso.</div></div><div class="item-price-wrap"><div class="item-price">R$8</div></div></div>
+      </div>
+    </div>
+
+    <div class="drinks-group">
+      <div class="drinks-group-title">Refrigerantes</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="refrigerante 350ml lata"><div class="item-info"><div class="item-name">Refrigerante 350ml</div></div><div class="item-price-wrap"><div class="item-price">R$8</div></div></div>
+        <div class="item-card" data-search="refrigerante 1 litro garrafa"><div class="item-info"><div class="item-name">Refrigerante 1 Litro</div></div><div class="item-price-wrap"><div class="item-price">R$15</div></div></div>
+        <div class="item-card" data-search="coca cola KS garrafa"><div class="item-info"><div class="item-name">Coca-Cola KS</div></div><div class="item-price-wrap"><div class="item-price">R$7</div></div></div>
+        <div class="item-card" data-search="schweppes citrus 350ml refrigerante"><div class="item-info"><div class="item-name">Schweppes Citrus 350ml</div></div><div class="item-price-wrap"><div class="item-price">R$8</div></div></div>
+        <div class="item-card" data-search="H2OH 500ml bebida"><div class="item-info"><div class="item-name">H2OH! 500ml</div></div><div class="item-price-wrap"><div class="item-price">R$9</div></div></div>
+      </div>
+    </div>
+
+    <div class="drinks-group">
+      <div class="drinks-group-title">Cervejas — 600ml</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="heineken 600ml cerveja"><div class="item-info"><div class="item-name">Heineken 600ml</div></div><div class="item-price-wrap"><div class="item-price">R$20</div></div></div>
+        <div class="item-card" data-search="amstel 600ml cerveja"><div class="item-info"><div class="item-name">Amstel 600ml</div></div><div class="item-price-wrap"><div class="item-price">R$15</div></div></div>
+        <div class="item-card" data-search="devassa 600ml cerveja"><div class="item-info"><div class="item-name">Devassa 600ml</div></div><div class="item-price-wrap"><div class="item-price">R$12</div></div></div>
+        <div class="item-card" data-search="budweiser 600ml cerveja"><div class="item-info"><div class="item-name">Budweiser 600ml</div></div><div class="item-price-wrap"><div class="item-price">R$18</div></div></div>
+        <div class="item-card" data-search="antarctica original 600ml cerveja"><div class="item-info"><div class="item-name">Antarctica Original 600ml</div></div><div class="item-price-wrap"><div class="item-price">R$18</div></div></div>
+        <div class="item-card" data-search="spaten 600ml cerveja"><div class="item-info"><div class="item-name">Spaten 600ml</div></div><div class="item-price-wrap"><div class="item-price">R$18</div></div></div>
+        <div class="item-card" data-search="stella artois 600ml cerveja"><div class="item-info"><div class="item-name">Stella Artois 600ml</div></div><div class="item-price-wrap"><div class="item-price">R$18</div></div></div>
+      </div>
+    </div>
+
+    <div class="drinks-group">
+      <div class="drinks-group-title">Long Neck</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="heineken long neck cerveja garrafa"><div class="item-info"><div class="item-name">Heineken Long Neck</div></div><div class="item-price-wrap"><div class="item-price">R$12</div></div></div>
+        <div class="item-card" data-search="heineken zero álcool long neck cerveja"><div class="item-info"><div class="item-name">Heineken Zero Álcool</div></div><div class="item-price-wrap"><div class="item-price">R$12</div></div></div>
+        <div class="item-card" data-search="budweiser long neck cerveja garrafa"><div class="item-info"><div class="item-name">Budweiser Long Neck</div></div><div class="item-price-wrap"><div class="item-price">R$12</div></div></div>
+        <div class="item-card" data-search="spaten long neck cerveja garrafa"><div class="item-info"><div class="item-name">Spaten Long Neck</div></div><div class="item-price-wrap"><div class="item-price">R$12</div></div></div>
+        <div class="item-card" data-search="stella artois long neck cerveja garrafa"><div class="item-info"><div class="item-name">Stella Artois Long Neck</div></div><div class="item-price-wrap"><div class="item-price">R$12</div></div></div>
+      </div>
+    </div>
+
+    <div class="drinks-group">
+      <div class="drinks-group-title">Drinques & Coquetéis</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="margherita blue curaçau tequila cointreau limão drinque"><div class="item-info"><div class="item-name">Margherita Blue</div><div class="item-desc">Licor de curaçau, tequila, cointreau e limão.</div></div><div class="item-price-wrap"><div class="item-price">R$38</div></div></div>
+        <div class="item-card" data-search="margherita tequila cointreau limão drinque"><div class="item-info"><div class="item-name">Margherita</div><div class="item-desc">Tequila, cointreau e limão.</div></div><div class="item-price-wrap"><div class="item-price">R$32</div></div></div>
+        <div class="item-card" data-search="coquetel frutas álcool bebida drinque"><div class="item-info"><div class="item-name">Coquetel de Frutas c/ Álcool</div></div><div class="item-price-wrap"><div class="item-price">R$25</div></div></div>
+        <div class="item-card" data-search="coquetel frutas sem álcool bebida drinque"><div class="item-info"><div class="item-name">Coquetel de Frutas s/ Álcool</div></div><div class="item-price-wrap"><div class="item-price">R$20</div></div></div>
+        <div class="item-card" data-search="caipirissima bacardi limão drinque caipirinha"><div class="item-info"><div class="item-name">Caipiríssi­ma</div><div class="item-desc">Com Bacardi.</div></div><div class="item-price-wrap"><div class="item-price">R$22</div></div></div>
+        <div class="item-card" data-search="caipiroska smirnoff limão drinque caipirinha"><div class="item-info"><div class="item-name">Caipirosca</div><div class="item-desc">Com Smirnoff.</div></div><div class="item-price-wrap"><div class="item-price">R$20</div></div></div>
+        <div class="item-card" data-search="caipirinha sagatiba limão cachaça drinque"><div class="item-info"><div class="item-name">Caipirinha</div><div class="item-desc">Com Sagatiba.</div></div><div class="item-price-wrap"><div class="item-price">R$20</div></div></div>
+        <div class="item-card" data-search="caipirmel sagatiba mel hortelã drinque"><div class="item-info"><div class="item-name">Caipimel</div><div class="item-desc">Com Sagatiba, mel e hortelã.</div></div><div class="item-price-wrap"><div class="item-price">R$25</div></div></div>
+        <div class="item-card" data-search="gin blackberry tônica morango hortelã drinque"><div class="item-info"><div class="item-name">Gin Blackberry</div><div class="item-desc">Gin, tônica, morango e hortelã.</div></div><div class="item-price-wrap"><div class="item-price">R$25</div></div></div>
+        <div class="item-card" data-search="aperol fresh smirnoff vodka laranja hortelã drinque"><div class="item-info"><div class="item-name">Aperol Fresh (Smirnoff)</div><div class="item-desc">Aperol, Vodka Smirnoff, laranja e hortelã.</div></div><div class="item-price-wrap"><div class="item-price">R$25</div></div></div>
+        <div class="item-card" data-search="aperol fresh absolut vodka laranja hortelã drinque"><div class="item-info"><div class="item-name">Aperol Fresh (Absolut)</div><div class="item-desc">Aperol, Vodka Absolut, laranja e hortelã.</div></div><div class="item-price-wrap"><div class="item-price">R$30</div></div></div>
+        <div class="item-card" data-search="red bull energético bebida"><div class="item-info"><div class="item-name">Red Bull</div></div><div class="item-price-wrap"><div class="item-price">R$20</div></div></div>
+      </div>
+    </div>
+
+    <div class="drinks-group">
+      <div class="drinks-group-title">Doses & Destilados</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="whisky old parr 12 anos destilado dose"><div class="item-info"><div class="item-name">Whisky Old Parr 12 anos</div></div><div class="item-price-wrap"><div class="item-price">R$20</div></div></div>
+        <div class="item-card" data-search="vodka absolut destilado dose"><div class="item-info"><div class="item-name">Vodka Absolut</div></div><div class="item-price-wrap"><div class="item-price">R$16</div></div></div>
+        <div class="item-card" data-search="vodka smirnoff destilado dose"><div class="item-info"><div class="item-name">Vodka Smirnoff</div></div><div class="item-price-wrap"><div class="item-price">R$10</div></div></div>
+        <div class="item-card" data-search="cachaça serra almas sagatiba destilado dose"><div class="item-info"><div class="item-name">Cachaça Serra das Almas / Sagatiba</div></div><div class="item-price-wrap"><div class="item-price">R$10</div></div></div>
+        <div class="item-card" data-search="tequila destilado dose"><div class="item-info"><div class="item-name">Tequila</div></div><div class="item-price-wrap"><div class="item-price">R$20</div></div></div>
+        <div class="item-card" data-search="gin destilado dose"><div class="item-info"><div class="item-name">Gin</div></div><div class="item-price-wrap"><div class="item-price">R$15</div></div></div>
+        <div class="item-card" data-search="campari destilado dose aperitivo"><div class="item-info"><div class="item-name">Campari</div></div><div class="item-price-wrap"><div class="item-price">R$15</div></div></div>
+        <div class="item-card" data-search="cointreau destilado dose licor"><div class="item-info"><div class="item-name">Cointreau</div></div><div class="item-price-wrap"><div class="item-price">R$22</div></div></div>
+        <div class="item-card" data-search="amarula destilado dose licor africano"><div class="item-info"><div class="item-name">Amarula</div></div><div class="item-price-wrap"><div class="item-price">R$25</div></div></div>
+        <div class="item-card" data-search="conhaque destilado dose brandy"><div class="item-info"><div class="item-name">Conhaque</div></div><div class="item-price-wrap"><div class="item-price">R$10</div></div></div>
+        <div class="item-card" data-search="keep coller destilado dose"><div class="item-info"><div class="item-name">Keep Coller</div></div><div class="item-price-wrap"><div class="item-price">R$20</div></div></div>
+        <div class="item-card" data-search="skol beats destilado bebida"><div class="item-info"><div class="item-name">Skol Beats</div></div><div class="item-price-wrap"><div class="item-price">R$12</div></div></div>
+      </div>
+    </div>
+
+    <div class="drinks-group">
+      <div class="drinks-group-title">Vinhos & Espumantes</div>
+      <div class="items-grid">
+        <div class="item-card" data-search="vinho casa taça 250ml bebida"><div class="item-info"><div class="item-name">Vinho da Casa — Taça 250ml</div></div><div class="item-price-wrap"><div class="item-price">R$16</div></div></div>
+        <div class="item-card" data-search="vinhos nacionais importados rótulos disponíveis bebida"><div class="item-info"><div class="item-name">Vinhos Nacionais e Importados</div><div class="item-desc">Ver rótulos disponíveis.</div></div><div class="item-price-wrap"><div class="item-price">—</div></div></div>
+        <div class="item-card" data-search="champagne espumantes licores rótulos disponíveis bebida"><div class="item-info"><div class="item-name">Champagne, Espumantes & Licores</div><div class="item-desc">Ver rótulos disponíveis.</div></div><div class="item-price-wrap"><div class="item-price">—</div></div></div>
+      </div>
+    </div>
+  
+  </section>
+</main>
+
+<footer>
+  <strong>Troppo Restaurante</strong> — Restaurante & Pizzaria<br>
+  <span>@restaurantetroppo</span>
+</footer>
+ <div class="cart" onclick="toggleCart()">
+  🛒 <span id="cart-count">0</span>
+</div>
+
+<div class="cart-box" id="cart-box">
+  <h3>Seu Pedido</h3>
+  <ul id="cart-items"></ul>
+  <p><strong>Total: <span id="total">R$0</span></strong></p>
+  <button onclick="finalizarPedido()">Finalizar no WhatsApp</button>
+</div>
+<script>
+const tabs = document.querySelectorAll('.tab');
+const sections = {
+  executivos: document.getElementById('sec-executivos'),
+  forno: document.getElementById('sec-forno'),
+  chapa: document.getElementById('sec-chapa'),
+  massas: document.getElementById('sec-massas'),
+  pizzas: document.getElementById('sec-pizzas'),
+  petiscos: document.getElementById('sec-petiscos'),
+  saladas: document.getElementById('sec-saladas'),
+  bebidas: document.getElementById('sec-bebidas'),
+};
+
+let activeSection = 'executivos';
+let searchMode = false;
+
+function showSection(key) {
+  activeSection = key;
+  Object.entries(sections).forEach(([k, el]) => {
+    el.style.display = k === key ? '' : 'none';
+  });
+  tabs.forEach(t => t.classList.toggle('active', t.dataset.section === key));
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.getElementById('search-input').value = '';
+    clearSearch();
+    showSection(tab.dataset.section);
+    window.scrollTo({ top: document.querySelector('.tabs-outer').offsetTop - 10, behavior: 'smooth' });
+  });
+});
+
+const searchInput = document.getElementById('search-input');
+const searchCount = document.getElementById('search-count');
+const noResults = document.getElementById('no-results');
+const noResultsTerm = document.getElementById('no-results-term');
+const allCards = document.querySelectorAll('.item-card');
+
+function clearSearch() {
+  searchMode = false;
+  searchCount.textContent = '';
+  noResults.style.display = 'none';
+  allCards.forEach(c => c.classList.remove('hidden'));
+}
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
+  if (!q) {
+    clearSearch();
+    showSection(activeSection);
+    return;
+  }
+  searchMode = true;
+  // Show all sections
+  Object.values(sections).forEach(el => el.style.display = '');
+  tabs.forEach(t => t.classList.remove('active'));
+
+  let count = 0;
+  allCards.forEach(card => {
+    const text = (card.dataset.search || '') + ' ' + card.textContent.toLowerCase();
+    if (text.includes(q)) {
+      card.classList.remove('hidden');
+      count++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+
+  if (count === 0) {
+    noResultsTerm.textContent = searchInput.value;
+    noResults.style.display = 'block';
+    searchCount.textContent = '';
+  } else {
+    noResults.style.display = 'none';
+    searchCount.textContent = `${count} item${count !== 1 ? 's' : ''} encontrado${count !== 1 ? 's' : ''}`;
+  }
+});
+
+let carrinho = [];
+
+function addItem(nome, preco) {
+  let itemExistente = carrinho.find(item => item.nome === nome);
+
+  if (itemExistente) {
+    itemExistente.qtd++;
+  } else {
+    carrinho.push({ nome, preco, qtd: 1 });
+  }
+
+  atualizarCarrinho();
+}
+
+function removerItem(nome) {
+  carrinho = carrinho.filter(item => item.nome !== nome);
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+  document.getElementById("cart-count").textContent = carrinho.length;
+
+  let lista = document.getElementById("cart-items");
+  lista.innerHTML = "";
+
+  let total = 0;
+
+  carrinho.forEach(item => {
+    total += item.preco * item.qtd;
+
+    let li = document.createElement("li");
+    li.innerHTML = `
+      ${item.nome} (${item.qtd}x) - R$${item.preco * item.qtd}
+      <button onclick="removerItem('${item.nome}')">❌</button>
+    `;
+    lista.appendChild(li);
+  });
+
+  document.getElementById("total").textContent = "R$" + total;
+}
+
+function finalizarPedido() {
+  if (carrinho.length === 0) {
+    alert("Carrinho vazio!");
+    return;
+  }
+
+  let mensagem = "Olá, quero pedir:%0A";
+  let total = 0;
+
+  carrinho.forEach(item => {
+    mensagem += `- ${item.nome} (${item.qtd}x) - R$${item.preco * item.qtd}%0A`;
+    total += item.preco * item.qtd;
+  });
+
+  mensagem += `%0ATotal: R$${total}`;
+
+  let numero = "557591526565"; 
+  let link = `https://wa.me/${numero}?text=${mensagem}`;
+
+  window.open(link, "_blank");
+}
+function toggleCart() {
+  let box = document.getElementById("cart-box");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+document.addEventListener('DOMContentLoaded', () => {
+  
+  document.querySelectorAll('.item-card').forEach(card => {
+    const nameEl = card.querySelector('.item-name');
+    const priceEl = card.querySelector('.item-price');
+    const priceWrap = card.querySelector('.item-price-wrap');
+    
+    if (nameEl && priceEl && priceWrap) {
+      if (priceWrap.querySelector('.add-btn')) return; 
+      
+      const name = nameEl.innerText.trim();
+      const priceText = priceEl.innerText.replace('R$', '').trim();
+      const price = parseFloat(priceText);
+      
+      const btn = document.createElement('button');
+      btn.className = 'add-btn';
+      btn.innerText = 'Adicionar';
+      btn.onclick = () => addItem(name, price); 
+      
+      priceWrap.appendChild(btn);
+    }
+  });
+
+  
+  document.querySelectorAll('.price-table').forEach(table => {
+    const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.innerText.trim());
+    const rows = table.querySelectorAll('tbody tr');
+    
+    rows.forEach(row => {
+      const nameEl = row.querySelector('td:first-child strong');
+      if (!nameEl) return;
+      const name = nameEl.innerText.trim();
+      
+      const cells = row.querySelectorAll('td');
+      for (let i = 1; i < cells.length; i++) {
+        const cell = cells[i];
+        const priceText = cell.innerText.replace('R$', '').trim();
+        const price = parseFloat(priceText);
+        
+        if (!isNaN(price)) {
+         
+          const size = headers[i] ? ` (${headers[i]})` : '';
+          
+          cell.innerHTML = `
+            <span>R$${price}</span>
+            <button class="add-btn-sm" onclick="addItem('${name}${size}', ${price})">+</button>
+          `;
+        }
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
